@@ -31,7 +31,7 @@ class Core(object):
                 children.append(parent2.crossover(parent1))
 
             sub_population += children
-            sub_population = self.select_survivors(sub_population, 2*sub_size)
+            sub_population = self.select_survivors(sub_population, sub_size)
 
         self.solution = max(best_solutions)
 

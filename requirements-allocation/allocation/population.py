@@ -11,5 +11,5 @@ class Population(object):
     def generate_population(self):
         return [
             Chromossome(requirements=self.requirements, analysts=self.analysts)
-            for i in range(50)
+            for i in range(len(self.requirements) * 3)
         ]
