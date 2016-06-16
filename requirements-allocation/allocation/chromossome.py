@@ -27,11 +27,28 @@ class Chromossome(object):
         ]
 
     @property
+    def penalty(self):
+        for gene in self.genes:
+            if gene.requirement.analyst == gene.analyst.pk:
+                return True
+
+        for analyst in self.analysts:
+            genes = [gene for gene in self.genes if gene.analyst == analyst]
+            if len(genes) > analyst.max_requirements:
+                return True
+
+        return False
+
+    @property
     def fitness(self):
+        if self.penalty:
+            return 0
         return sum([gene.fitness for gene in self.genes])
 
     @property
     def survive_chance(self):
+        if self.fitness == 0:
+            return 0
         return (self.fitness / len(self.genes)) * 10
 
     def crossover(self, chromossome):
@@ -43,7 +60,7 @@ class Chromossome(object):
         genes = parent1_genes + parent2_genes
 
         new_chromossome = Chromossome(self.requirements, self.analysts, genes)
-        if random.randint(0, 100) >= 90:
+        if random.randint(0, 100) >= 99:
             new_chromossome.mutate()
         return new_chromossome
 

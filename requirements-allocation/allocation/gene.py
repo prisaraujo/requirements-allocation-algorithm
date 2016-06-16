@@ -19,8 +19,5 @@ class Gene(object):
     @property
     def fitness(self):
         experience = self.analyst.experience * 2.5
-        availability = self.analyst.availability() * 10 / \
-            self.analyst.max_requirements
         skill = self.analyst.skill_level_for(self.requirement)
-
-        return (experience + availability + skill) / 3
+        return (experience + skill) / 2

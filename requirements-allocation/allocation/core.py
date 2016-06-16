@@ -38,8 +38,13 @@ class Core(object):
     def select_survivors(self, population, size):
         survivors = population
         while len(survivors) > size:
-            survivors = [
+            new_survivors = [
                 chromossome for chromossome in survivors
-                if random.randint(0, 100) <= chromossome.survive_chance
+                if random.randint(1, 100) <= chromossome.survive_chance
             ]
+            if len(new_survivors) >= size / 2:
+                survivors = new_survivors
+            else:
+                break
+
         return survivors
