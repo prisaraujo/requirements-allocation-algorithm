@@ -30,6 +30,10 @@ class Chromossome(object):
     def fitness(self):
         return sum([gene.fitness for gene in self.genes])
 
+    @property
+    def survive_chance(self):
+        return (self.fitness / len(self.genes)) * 10
+
     def crossover(self, chromossome):
         parent1_genes = self.genes[:int(len(self.genes)/2)]
         reqs = [gene.requirement for gene in parent1_genes]

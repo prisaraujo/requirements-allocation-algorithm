@@ -6,7 +6,7 @@ from utils import get_time
 
 def main():
     # Simple Algorithm
-    print('Starting algorith: {}'.format(get_time()))
+    print('Starting algorithm: {}'.format(get_time()))
     core = Core(
         requirements=get_requirements(),
         analysts=get_analysts()

@@ -15,20 +15,24 @@ class Core(object):
         sub_size = len(sub_population)
 
         for i in range(1000):
+            print('iteration {}'.format(i+1))
             best_solution = max(sub_population)
             if best_solution.fitness >= 8 * len(best_solution.genes):
                 break
 
-            for i in range(sub_size):
-                parent1 = random.choice(sub_population)
+            children = []
+            for parent1 in sub_population:
                 parent2 = random.choice(sub_population)
-                sub_population.append(parent1.crossover(parent2))
-                sub_population.append(parent2.crossover(parent1))
+                children.append(parent1.crossover(parent2))
+                children.append(parent2.crossover(parent1))
 
-            # sub_population = self.select_survivors(sub_population, sub_size)
+            sub_population += children
+            sub_population = self.select_survivors(sub_population)
 
         self.solution = max(sub_population)
 
-    def select_survivors(self, population, size):
-        survivors = sorted(population, reverse=True)[:size]
-        return survivors
+    def select_survivors(self, population):
+        return [
+            chromossome for chromossome in population
+            if random.randint(0, 100) <= chromossome.survive_chance
+        ]
