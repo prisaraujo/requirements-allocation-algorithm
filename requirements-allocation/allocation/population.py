@@ -1,17 +1,15 @@
-from .gene import Gene
+from .chromossome import Chromossome
 
 
 class Population(object):
 
-    def __init__(self, requirement, analysts):
+    def __init__(self, requirements, analysts):
         self.analysts = analysts
-        self.requirement = requirement
-        self.genes = self.generate_genes()
+        self.requirements = requirements
+        self.chromossomes = self.generate_population()
 
-    def generate_genes(self):
+    def generate_population(self):
         return [
-            Gene(
-                analyst=analyst,
-                requirement=self.requirement
-            ) for analyst in self.analysts
+            Chromossome(requirements=self.requirements, analysts=self.analysts)
+            for i in range(50)
         ]

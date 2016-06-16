@@ -24,9 +24,3 @@ class Gene(object):
         skill = self.analyst.skill_level_for(self.requirement)
 
         return (experience + availability + skill) / 3
-
-    def crossover(self, gene):
-        return Gene(
-            analyst=self.analyst,
-            requirement=gene.requirement
-        )

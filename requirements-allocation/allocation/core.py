@@ -4,25 +4,31 @@ from .population import Population
 
 class Core(object):
 
-    def __init__(self, algorithm, requirements, analysts):
+    def __init__(self, requirements, analysts):
         self.analysts = analysts
         self.requirements = requirements
-        self.selected_genes = []
-        self.algorithm = algorithm(requirements, analysts)
+        self.population = Population(requirements, analysts)
+        self.solution = None
 
     def run(self):
-        for requirement in sorted(self.requirements, reverse=True):
-            analysts = [
-                analyst for analyst in self.analysts
-                if analyst.pk != requirement.analyst
-            ]
-            population = Population(
-                requirement=requirement,
-                analysts=analysts
-            )
+        sub_population = self.population.chromossomes
+        sub_size = len(sub_population)
 
-            selected = self.algorithm.select_gene(population)
-            selected.analyst.requirements_to_review.append(
-                selected.requirement
-            )
-            self.selected_genes.append(selected)
+        for i in range(1000):
+            best_solution = max(sub_population)
+            if best_solution.fitness >= 8 * len(best_solution.genes):
+                break
+
+            for i in range(sub_size):
+                parent1 = random.choice(sub_population)
+                parent2 = random.choice(sub_population)
+                sub_population.append(parent1.crossover(parent2))
+                sub_population.append(parent2.crossover(parent1))
+
+            # sub_population = self.select_survivors(sub_population, sub_size)
+
+        self.solution = max(sub_population)
+
+    def select_survivors(self, population, size):
+        survivors = sorted(population, reverse=True)[:size]
+        return survivors
