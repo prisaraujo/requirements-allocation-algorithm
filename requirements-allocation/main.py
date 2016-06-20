@@ -12,7 +12,7 @@ def main():
         analysts=get_analysts()
     )
     core.run()
-    print('Stoping algorithm: {}\nResults:'.format(get_time()))
+    print('Stopping algorithm: {}\nResults:'.format(get_time()))
     print('Solution fitness: {}'.format(core.solution.fitness))
     for gene in core.solution.genes:
         print('{0} ({1})'.format(gene, gene.fitness))

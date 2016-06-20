@@ -1,7 +1,7 @@
 [
   {
     "pk": 1,
-    "name": "Ari",
+    "name": "Jose",
     "experience": 2,
     "skills": {
       "0": 5,
@@ -12,7 +12,7 @@
   },
   {
     "pk": 2,
-    "name": "Pri",
+    "name": "Patricia",
     "experience": 3,
     "skills": {
       "0": 7,
@@ -22,7 +22,7 @@
   },
   {
     "pk": 3,
-    "name": "Ray",
+    "name": "Rayane",
     "experience": 1,
     "skills": {
       "0": 1,

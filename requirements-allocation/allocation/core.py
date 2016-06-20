@@ -16,7 +16,7 @@ class Core(object):
 
         best_solutions = []
 
-        for i in range(1000):
+        for i in range(100):
             print('iteration {}'.format(i+1))
             best_solution = max(sub_population)
 
