@@ -44,14 +44,8 @@ class Core(object):
 
     def select_survivors(self, population, size):
         survivors = self.remove_invalid(population)
-        while len(survivors) > size:
-            new_survivors = [
-                chromossome for chromossome in survivors
-                if random.randint(1, 100) <= chromossome.survive_chance
-            ]
-            if len(new_survivors) >= size / 2:
-                survivors = new_survivors
-            else:
-                break
-
+        survivors = [
+            chromossome for chromossome in survivors
+            if random.randint(1, 100) <= chromossome.survive_chance
+        ]
         return survivors
