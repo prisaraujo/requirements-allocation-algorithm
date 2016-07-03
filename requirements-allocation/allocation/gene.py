@@ -17,6 +17,10 @@ class Gene(object):
         return self.fitness > gene.fitness
 
     @property
+    def is_invalid(self):
+        return self.requirement.analyst == self.analyst.pk
+
+    @property
     def fitness(self):
         experience = self.analyst.experience * 2.5
         skill = self.analyst.skill_level_for(self.requirement)

@@ -26,16 +26,30 @@ class Chromossome(object):
             ) for requirement in self.requirements
         ]
 
+    def get_workload_by_analyst(self):
+        workload = {}
+        for gene in self.genes:
+            if gene.analyst in workload:
+                workload[gene.analyst] += gene.requirement.work_time
+            else:
+                workload[gene.analyst] = gene.requirement.work_time
+        return workload
+
+    def is_over_workload(self):
+        workload_by_analyst = get_workload_by_analyst()
+        for analyst in self.analysts:
+            if analyst in workload_by_analyst:
+                if workload_by_analyst[analysts] > analysts.speed_workload:
+                    return True
+        return False
+
     @property
     def penalty(self):
-        for gene in self.genes:
-            if gene.requirement.analyst == gene.analyst.pk:
-                return True
+        if True in [gene.is_invalid for gene in self.genes]:
+            return True
 
-        for analyst in self.analysts:
-            genes = [gene for gene in self.genes if gene.analyst == analyst]
-            if len(genes) > analyst.max_requirements:
-                return True
+        if self.is_over_workload:
+            return True
 
         return False
 

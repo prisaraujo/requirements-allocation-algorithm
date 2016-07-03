@@ -1,4 +1,5 @@
 from datetime import datetime
+from constants import REQUIREMENT_WORK_TIME
 from .enums import RequirementStatusEnum
 from .enums import RequirementCategoryEnum
 from .enums import RequirementComplexityEnum
@@ -22,6 +23,7 @@ class Requirement(object):
         self.reviewer = None
         self.review_date = None
         self.status = RequirementStatusEnum.ANALYSED
+        self.work_time = REQUIREMENT_WORK_TIME[self.complexity]
 
     def __eq__(self, req):
         self.complexity = req.complexity

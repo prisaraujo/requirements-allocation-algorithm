@@ -12,20 +12,20 @@ def read_file(file_name):
 
 def get_analysts():
     analysts = []
-    for data in read_file('data/analystsA.json'):
+    for data in read_file('data/analysts.json'):
         analysts.append(Analyst(
             pk=data['pk'],
             name=data['name'],
             experience=data['experience'],
             skills=data['skills'],
-            max_requirements=data['max_requirements'],
+            workload=data['workload'],
         ))
     return analysts
 
 
 def get_requirements():
     requirements = []
-    for data in read_file('data/requirementsA.json'):
+    for data in read_file('data/requirements.json'):
         requirements.append(Requirement(
             pk=data['pk'],
             code=data['code'],

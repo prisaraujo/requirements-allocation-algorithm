@@ -8,7 +8,7 @@
       "1": 8,
       "2": 3
     },
-    "max_requirements": 10
+    "workload": 10
   },
   {
     "pk": 2,
@@ -18,7 +18,7 @@
       "0": 7,
       "2": 8
     },
-    "max_requirements": 10
+    "workload": 10
   },
   {
     "pk": 3,
@@ -29,6 +29,6 @@
       "1": 1,
       "2": 1
     },
-    "max_requirements": 5
+    "workload": 5
   }
 ]
