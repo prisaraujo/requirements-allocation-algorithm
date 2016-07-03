@@ -11,18 +11,18 @@ class Core(object):
         self.solution = None
 
     def run(self):
-        sub_population = self.population.chromossomes
+        sub_population = self.remove_invalid(self.population.chromossomes)
         sub_size = len(sub_population)
 
         best_solutions = []
 
         for i in range(1000):
             print('iteration {}'.format(i+1))
-            best_solution = max(sub_population)
-
-            best_solutions.append(best_solution)
-            if best_solution.fitness >= 8 * len(best_solution.genes):
-                break
+            if sub_population:
+                best_solution = max(sub_population)
+                best_solutions.append(best_solution)
+                if best_solution.fitness >= 8 * len(best_solution.genes):
+                    break
 
             children = []
             for parent1 in sub_population:
@@ -33,10 +33,17 @@ class Core(object):
             sub_population += children
             sub_population = self.select_survivors(sub_population, sub_size)
 
-        self.solution = max(best_solutions)
+        if best_solutions:
+            self.solution = max(best_solutions)
+
+    def remove_invalid(self, population):
+        return [
+            chromossome for chromossome in population
+            if not chromossome.is_invalid
+        ]
 
     def select_survivors(self, population, size):
-        survivors = population
+        survivors = self.remove_invalid(population)
         while len(survivors) > size:
             new_survivors = [
                 chromossome for chromossome in survivors

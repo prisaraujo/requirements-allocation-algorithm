@@ -12,7 +12,7 @@ class Analyst(object):
         self.workload = workload
         self.requirements_to_analysis = []
         self.requirements_to_review = []
-        self.speed_workload = ANALYST_WORKLOAD_MULTIPLIER[self.experience]
+        self.speed_workload = workload * ANALYST_WORKLOAD_MULTIPLIER[self.experience]  # noqa
 
     @property
     def experience_text(self):

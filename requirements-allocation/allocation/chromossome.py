@@ -35,16 +35,17 @@ class Chromossome(object):
                 workload[gene.analyst] = gene.requirement.work_time
         return workload
 
+    @property
     def is_over_workload(self):
-        workload_by_analyst = get_workload_by_analyst()
+        workload_by_analyst = self.get_workload_by_analyst()
         for analyst in self.analysts:
             if analyst in workload_by_analyst:
-                if workload_by_analyst[analysts] > analysts.speed_workload:
+                if workload_by_analyst[analyst] > analyst.speed_workload:
                     return True
         return False
 
     @property
-    def penalty(self):
+    def is_invalid(self):
         if True in [gene.is_invalid for gene in self.genes]:
             return True
 
@@ -55,8 +56,6 @@ class Chromossome(object):
 
     @property
     def fitness(self):
-        if self.penalty:
-            return 0
         return sum([gene.fitness for gene in self.genes])
 
     @property

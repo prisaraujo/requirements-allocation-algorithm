@@ -22,6 +22,8 @@ class Gene(object):
 
     @property
     def fitness(self):
+        if self.is_invalid:
+            return 0
         experience = self.analyst.experience * 2.5
         skill = self.analyst.skill_level_for(self.requirement)
         return (experience + skill) / 2
