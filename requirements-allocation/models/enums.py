@@ -54,7 +54,7 @@ class AnalystExperienceChoices(object):
 
     ENTRY_LEVEL = 1
     JUNIOR = 2
-    PAPYROLL = 3
+    PAYROLL = 3
     SENIOR = 4
 
 
