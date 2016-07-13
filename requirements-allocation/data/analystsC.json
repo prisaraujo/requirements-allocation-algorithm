@@ -1,0 +1,40 @@
+[
+  {
+    "pk": 1,
+    "name": "Maria",
+    "experience": 3,
+    "skills": {
+      "0": 10,
+      "1": 5,
+      "2": 7,
+      "6": 9
+    },
+    "workload": 40
+  },
+  {
+    "pk": 2,
+    "name": "Carlos",
+    "experience": 4,
+    "skills": {
+      "0": 7,
+      "1": 7,
+      "2": 9,
+      "3": 6,
+      "6": 8
+    },
+    "workload": 40
+  },
+  {
+    "pk": 3,
+    "name": "Jose",
+    "experience": 4,
+    "skills": {
+      "0": 10,
+      "1": 9,
+      "2": 9,
+      "3": 8,
+      "6": 9
+    },
+    "workload": 30
+  }
+]

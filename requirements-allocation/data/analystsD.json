@@ -1,33 +1,34 @@
 [
-  {
+	{
     "pk": 1,
-    "name": "Jose",
+    "name": "Amanda",
     "experience": 2,
     "skills": {
-      "0": 5,
-      "1": 8,
-      "2": 3
-    },
-    "workload": 40
-  },
-  {
-    "pk": 2,
-    "name": "Patricia",
-    "experience": 3,
-    "skills": {
       "0": 7,
+      "1": 8,
       "2": 8
     },
     "workload": 40
   },
   {
+    "pk": 2,
+    "name": "Jefferson",
+    "experience": 2,
+    "skills": {
+      "0": 9,
+      "3": 8,
+      "6": 2
+    },
+    "workload": 40
+  },
+  {
     "pk": 3,
-    "name": "Rayane",
+    "name": "Hamilton",
     "experience": 1,
     "skills": {
-      "0": 1,
-      "1": 1,
-      "2": 1
+      "1": 4,
+      "2": 8,
+      "3": 6
     },
     "workload": 20
   }

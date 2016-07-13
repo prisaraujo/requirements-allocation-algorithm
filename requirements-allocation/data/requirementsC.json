@@ -1,0 +1,29 @@
+[
+  {
+    "pk": 1,
+    "code": "RNF001",
+    "description": "Requisito 001",
+    "type": "RNF",
+    "complexity": 1,
+    "category": 6,
+    "analyst": 1
+  },
+  {
+    "pk": 2,
+    "code": "RNF002",
+    "description": "Requisito 002",
+    "type": "RNF",
+    "complexity": 2,
+    "category": 2,
+    "analyst": 1
+  },
+  {
+    "pk": 3,
+    "code": "RF003",
+    "description": "Requisito 003",
+    "type": "RF",
+    "complexity": 0,
+    "category": 0,
+    "analyst": 2
+  }
+]

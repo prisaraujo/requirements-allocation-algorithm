@@ -17,7 +17,7 @@ class Core(object):
         best_solutions = []
 
         for i in range(1000):
-            print('iteration {}'.format(i+1))
+            #print('iteration {}'.format(i+1))
             if sub_population:
                 best_solution = max(sub_population)
                 best_solutions.append(best_solution)

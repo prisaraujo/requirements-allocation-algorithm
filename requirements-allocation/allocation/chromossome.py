@@ -73,7 +73,7 @@ class Chromossome(object):
         genes = parent1_genes + parent2_genes
 
         new_chromossome = Chromossome(self.requirements, self.analysts, genes)
-        if random.randint(0, 100) >= 99:
+        if random.randint(0, 100) > 99:
             new_chromossome.mutate()
         return new_chromossome
 

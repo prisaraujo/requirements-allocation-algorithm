@@ -1,0 +1,164 @@
+[
+  {
+    "pk": 1,
+    "code": "RF001",
+    "description": "Requisito 001",
+    "type": "RF",
+    "complexity": 0,
+    "category": 0,
+    "analyst": 19
+  },
+  {
+    "pk": 2,
+    "code": "RF002",
+    "description": "Requisito 0002",
+    "type": "RF",
+    "complexity": 1,
+    "category": 1,
+    "analyst": 19
+  },
+  {
+    "pk": 3,
+    "code": "RNF003",
+    "description": "Requisito 003",
+    "type": "RNF",
+    "complexity": 2,
+    "category": 2,
+    "analyst": 19
+  },
+  {
+    "pk": 4,
+    "code": "RF004",
+    "description": "Requisito 004",
+    "type": "RF",
+    "complexity": 1,
+    "category": 3,
+    "analyst": 7
+  },
+  {
+    "pk": 5,
+    "code": "RF005",
+    "description": "Requisito 005",
+    "type": "RF",
+    "complexity": 0,
+    "category": 4,
+    "analyst": 7
+  },
+  {
+    "pk": 6,
+    "code": "RF006",
+    "description": "Requisito 006",
+    "type": "RF",
+    "complexity": 0,
+    "category": 5,
+    "analyst": 7
+  },
+  {
+    "pk": 7,
+    "code": "RNF007",
+    "description": "Requisito 007",
+    "type": "RNF",
+    "complexity": 1,
+    "category": 6,
+    "analyst": 7
+  },
+  {
+    "pk": 8,
+    "code": "RNF008",
+    "description": "Requisito 008",
+    "type": "RNF",
+    "complexity": 2,
+    "category": 7,
+    "analyst": 10
+  },
+  {
+    "pk": 9,
+    "code": "RF009",
+    "description": "Requisito 009",
+    "type": "RF",
+    "complexity": 2,
+    "category": 0,
+    "analyst": 14
+  },
+  {
+    "pk": 10,
+    "code": "RF010",
+    "description": "Requisito 010",
+    "type": "RF",
+    "complexity": 0,
+    "category": 1,
+    "analyst": 14
+  },
+  {
+    "pk": 11,
+    "code": "RNF011",
+    "description": "Requisito 011",
+    "type": "RNF",
+    "complexity": 1,
+    "category": 2,
+    "analyst": 2
+  },
+  {
+    "pk": 12,
+    "code": "RF012",
+    "description": "Requisito 012",
+    "type": "RF",
+    "complexity": 1,
+    "category": 3,
+    "analyst": 2
+  },
+  {
+    "pk": 13,
+    "code": "RF013",
+    "description": "Requisito 013",
+    "type": "RF",
+    "complexity": 1,
+    "category": 4,
+    "analyst": 2
+  },
+  {
+    "pk": 14,
+    "code": "RF014",
+    "description": "Requisito 014",
+    "type": "RF",
+    "complexity": 2,
+    "category": 5,
+    "analyst": 2
+  },
+  {
+    "pk": 15,
+    "code": "RF015",
+    "description": "Requisito 015",
+    "type": "RF",
+    "complexity": 0,
+    "category": 6,
+    "analyst": 1
+  },
+  {
+    "pk": 16,
+    "code": "RNF016",
+    "description": "Requisito 016",
+    "type": "RNF",
+    "complexity": 0,
+    "category": 7,
+    "analyst": 1
+  },
+  {
+    "pk": 17,
+    "code": "RNF017",
+    "description": "Requisito 017",
+    "type": "RNF",
+    "complexity": 1,
+    "category": 0,
+    "analyst": 3
+  },
+  {
+    "pk": 18,
+    "code": "RF018",
+    "description": "Requisito 018",
+    "type": "RF",
+    "complexity": 1,
+    "category": 1,
+    "analyst": 18
+  }
+]
