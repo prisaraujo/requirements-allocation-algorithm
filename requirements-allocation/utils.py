@@ -12,7 +12,7 @@ def read_file(file_name):
 
 def get_analysts():
     analysts = []
-    for data in read_file('data/analystsB.json'):
+    for data in read_file('data/analystsA.json'):
         analysts.append(Analyst(
             pk=data['pk'],
             name=data['name'],
@@ -25,7 +25,7 @@ def get_analysts():
 
 def get_requirements():
     requirements = []
-    for data in read_file('data/requirementsB.json'):
+    for data in read_file('data/requirementsA.json'):
         requirements.append(Requirement(
             pk=data['pk'],
             code=data['code'],

@@ -65,7 +65,8 @@ class Chromossome(object):
         return (self.fitness / len(self.genes)) * 10
 
     def crossover(self, chromossome):
-        parent1_genes = self.genes[:int(len(self.genes)/2)]
+        cutoff = random.randint(0, len(self.genes) - 1)
+        parent1_genes = self.genes[:cutoff]
         reqs = [gene.requirement for gene in parent1_genes]
         parent2_genes = [
             gene for gene in chromossome.genes if gene.requirement not in reqs
@@ -73,7 +74,7 @@ class Chromossome(object):
         genes = parent1_genes + parent2_genes
 
         new_chromossome = Chromossome(self.requirements, self.analysts, genes)
-        if random.randint(0, 100) > 99:
+        if random.randint(0, 100) <= len(genes):
             new_chromossome.mutate()
         return new_chromossome
 

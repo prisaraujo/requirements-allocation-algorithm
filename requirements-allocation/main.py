@@ -16,9 +16,9 @@ def main():
         print('Stopping algorithm: {}\nResults:'.format(get_time()))
         print('Solution fitness: {}'.format(core.solution.fitness))
         for gene in core.solution.genes:
-            print('{0} ({1})').format(gene, gene.fitness)
+            print('{0} ({1})'.format(gene, gene.fitness))
     else:
-        print 'No solution was found!'
+        print('No solution was found!')
 
 
 if __name__ == '__main__':

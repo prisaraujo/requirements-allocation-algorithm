@@ -17,12 +17,8 @@ class Core(object):
         best_solutions = []
 
         for i in range(1000):
-            #print('iteration {}'.format(i+1))
             if sub_population:
-                best_solution = max(sub_population)
-                best_solutions.append(best_solution)
-                if best_solution.fitness >= 8 * len(best_solution.genes):
-                    break
+                best_solutions.append(max(sub_population))
 
             children = []
             for parent1 in sub_population:
